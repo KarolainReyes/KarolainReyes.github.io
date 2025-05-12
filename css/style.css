@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: rgb(224, 183, 235);
 }
 
 .banner {
@@ -50,10 +51,209 @@ nav ul li a {
     text-decoration: none;
 }
 
+a {
+    position: relative;
+    text-decoration: none;
+    color: #6a0dad;
+    font-weight: bold;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #6a0dad;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 section {
     padding: 2rem;
     text-align: center;
 }
+
+.sobre-mi {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 20px;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6a0dad, #9b4dca);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.perfil-img {
+    width: 200%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor principal */
+.habilidades-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Sección de Habilidades */
+.habilidades {
+  flex: 0 0 40%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.habilidades h2 {
+  text-align: center;
+  color: #6a0dad;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.habilidades-contenido {
+  display: flex;
+  justify-content: space-between;
+}
+
+.habilidades-lista {
+  width: 48%;
+}
+
+.habilidades-lista h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.habilidades-lista ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.habilidades-lista li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Sección de Proyectos */
+.proyectos {
+  flex: 0 0 50%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.proyectos h2 {
+  text-align: center;
+  color: #6a0dad;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.proyectos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.proyecto {
+  width: 30%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.proyecto img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.proyecto h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.proyecto p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .habilidades-proyectos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .habilidades,
+  .proyectos {
+    flex: 0 0 100%;
+  }
+
+  .proyectos-lista {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .proyecto {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+
 
 footer {
     text-align: center;
@@ -78,12 +278,32 @@ footer {
     .banner p {
         font-size: 1rem;
     }
+
+}
+
+@media (max-width: 768px) {
+    .sobre-mi {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    @keyframes slide-up {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+    .video-container iframe {
+        width: 100%;
+        height: auto;
     }
+
+    .perfil-img {
+        width: 150px;
+        margin: 0 auto 15px;
+    }
+}
+
+@keyframes slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+
+}
