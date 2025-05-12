@@ -5,12 +5,35 @@ body {
     line-height: 1.6;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+.banner {
+    background-color: #9870b4;
+    color: white;
     text-align: center;
+    padding: 50px 0;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
 }
+
+.banner h1,
+.banner p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slide-up 1s forwards;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation-delay: 1s;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    animation-delay: 1s
+}
+
 
 nav ul {
     list-style: none;
@@ -38,3 +61,29 @@ footer {
     background: #333;
     color: #fff;
 }
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+    }
+
+    @keyframes slide-up {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
